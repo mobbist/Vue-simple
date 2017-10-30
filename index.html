@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>vue-simple</title>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app"></div>
+	<script src="./dist/vue.min.js"></script>
+	<script src="./dist/build.js"></script>
+</body>
+<script>
+	var Event = {};
+	Event.trigger = function (state, a) {
+		console.log(a);
+	}
+	window.local = { "CTSysNo": 123, "TempletType": 1, "TempletNo": 1, "Floors": [{ "FloorCode": "1", "Title": "最火热卖推广位", "FloorDetails": [{ "ImageUrl": null, "URL": null, "ProductNo": null, "OrderNumber": 0, "Remark": null, "Code": "0", "Message": null }] }, { "FloorCode": null, "Title": "最火热卖推广位", "FloorDetails": [{ "ImageUrl": null, "URL": null, "ProductNo": null, "OrderNumber": 0, "Remark": null, "Code": "0", "Message": null }] }, { "FloorCode": "9", "Title": "最火热卖推广位", "FloorDetails": [{ "ImageUrl": "123", "URL": "456", "ProductNo": null, "OrderNumber": 0, "Remark": null, "Code": "0", "Message": null }, { "ImageUrl": "123", "URL": "456", "ProductNo": null, "OrderNumber": 0, "Remark": null, "Code": "0", "Message": null }] }], "Code": "0", "Message": null }
+
+	window.shopApiHost = "http://10.0.10.128/"
+	function type1() {
+		console.log(local);
+		AlertView({
+			templetType: 1, //app还是PC
+			templetNo: 1,   //模板编号
+			floorCode: 9,    //楼层编号
+			typeCode: 3,    //组件编号         
+			template: {   //模块信息
+				size: [
+					{ width: "44", height: "55" },
+					{ width: "44", height: "55" }
+				],
+				limit: 2
+			}
+		});
+		AlertView.open(); //打开该组件
+	}
+</script>
+
+<body>
+
+	<div onclick="type1()" style="width:300px;height:300px; background-color:#f70"></div>
+</body>
+
+</html>
